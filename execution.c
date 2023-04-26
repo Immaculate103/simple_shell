@@ -10,7 +10,7 @@ void ch_ex(char **arg_vect)
 	{
 		fprintf(stderr, "Error: Command '%s' not found\n", arg_vect[0]);
 	}
-	if (execvp(arg_vect[0], arg_vect) < 0
+	if (execvp(arg_vect[0], arg_vect) < 0)
 			{
 			fprintf(stderr, "Error: command failed to execute.\n");
 			exit(EXIT_FAILURE);
