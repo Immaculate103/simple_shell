@@ -92,10 +92,4 @@ int ss_redir(char **args, char **redir_argv);
 int pipe_ss(char **args);
 /* Executes commands inputed */
 void cmd_ex(char **args, char **redir_argv, int wait, int res);
-/* exits the shell */
-int _myexit(info_t *info);
-/* substitutes the processes' present folder */
-int _mycd(info_t *info);
-/* prints data on commands available */
-int _myhelp(info_t *info);
 #endif
