@@ -30,6 +30,16 @@
 #define F_FILE "<"
 #define P_CHOICE "|"
 
+/************* STRUCTURES **************/
+
+/**
+ * ch_ex - Executes a child process with the given arguments 
+ * @arg_vect: Null-terminated array of pointers to command-line arguments
+ * ch_ovwrt_ex - Executes a child process with input redirected from a file
+ * @dest: Path to the file to be overwritten by the new process
+ * @dir: Array of strings containing the redirection arguments
+ */
+
 /* Globals */
 int T_run;
 /* Initializes the shell */

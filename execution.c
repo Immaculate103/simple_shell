@@ -6,15 +6,15 @@
  */
 void ch_ex(char **arg_vect)
 {
-	if (access(arg_vect[0], X_OK) != 0) 
+	if (access(arg_vect[0], X_OK) != 0)
 	{
 		fprintf(stderr, "Error: Command '%s' not found\n", arg_vect[0]);
 	}
 	if (execvp(arg_vect[0], arg_vect) < 0)
-			{
-			fprintf(stderr, "Error: command failed to execute.\n");
-			exit(EXIT_FAILURE);
-			}
+	{
+		fprintf(stderr, "Error: command failed to execute.\n");
+		exit(EXIT_FAILURE);
+	}
 }
 /**
  * ch_ovwrt_ex - Executes a child process with input redirected from a file.
@@ -23,22 +23,22 @@ void ch_ex(char **arg_vect)
  */
 void ch_ovwrt_ex(char **arg_vect, char **dest)
 {
-    int input_fd = open(dest[1], O_RDONLY);
-    if (input_fd == -1)
-    {
-        perror("Error: Redirect input failed");
-        exit(EXIT_FAILURE);
-    }
+	int input_fd = open(dest[1], O_RDONLY);
 
-    dup2(input_fd, STDIN_FILENO);
+	if (input_fd == -1)
+	{
+		perror("Error: Redirect input failed");
+		exit(EXIT_FAILURE);
+	}
 
-    if (close(input_fd) == -1)
-    {
-        perror("Error: Closing input failed");
-        exit(EXIT_FAILURE);
-    }
+	dup2(input_fd, STDIN_FILENO);
+	if (close(input_fd) == -1)
+	{
+		perror("Error: Closing input failed");
+		exit(EXIT_FAILURE);
+	}
 
-    ch_ex(arg_vect);
+	ch_ex(arg_vect);
 }
 /**
  * ch_ovwrt_ex_f - Executes a child process with output redirected to a file.
@@ -47,20 +47,21 @@ void ch_ovwrt_ex(char **arg_vect, char **dest)
  */
 void ch_ovwrt_ex_f(char **arg_vect, char **dest)
 {
-    int output_fd = creat(dest[1], S_IRWXU);
-    if (output_fd == -1)
-    {
-        perror("Error: Redirect output failed");
-        exit(EXIT_FAILURE);
-    }
+	int output_fd = creat(dest[1], S_IRWXU);
 
-    dup2(output_fd, STDOUT_FILENO);
+	if (output_fd == -1)
+	{
+		perror("Error: Redirect output failed");
+		exit(EXIT_FAILURE);
+	}
 
-    if (close(output_fd) == -1)
-    {
-        perror("Error: Closing output failed");
-        exit(EXIT_FAILURE);
-    }
+	dup2(output_fd, STDOUT_FILENO);
 
-    ch_ex(arg_vect);
+	if (close(output_fd) == -1)
+	{
+		perror("Error: Closing output failed");
+		exit(EXIT_FAILURE);
+	}
+
+	ch_ex(arg_vect);
 }
