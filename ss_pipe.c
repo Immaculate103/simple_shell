@@ -7,15 +7,17 @@
  */
 int pipe_ss(char **args)
 {
-    int pipe_index = pipe_tr(args);
+	int pipe_index = pipe_tr(args);
 
-    if (pipe_index != 0)
-    {
-        char *child_args_1[S_PIPE];
-        char *child_args_2[S_PIPE];
-        p_parser(args, child_args_1, child_args_2, pipe_index);
-        ch_p_ex(child_args_1, child_args_2);
-        return (1);
-    }
-    return (0);
+	if (pipe_index != 0)
+	{
+		char *child_args_1[S_PIPE];
+		char *child_args_2[S_PIPE];
+
+		p_parser(args, child_args_1, child_args_2, pipe_index);
+		ch_p_ex(child_args_1, child_args_2);
+		return (1);
+	}
+
+	return (0);
 }

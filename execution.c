@@ -2,7 +2,7 @@
 
 /**
  * ch_ex - Executes a child process with the given arguments.
- * @argv: Array of strings containing the command and its arguments.
+ * @arg_vect: Array of strings containing the command and its arguments.
  */
 void ch_ex(char **arg_vect)
 {
@@ -18,8 +18,8 @@ void ch_ex(char **arg_vect)
 }
 /**
  * ch_ovwrt_ex - Executes a child process with input redirected from a file.
- * @argv: Array of strings containing the command and its arguments.
- * @dir: Array of strings containing the redirection arguments.
+ * @arg_vect: Array of strings containing the command and its arguments.
+ * @dest: Array of strings containing the redirection arguments.
  */
 void ch_ovwrt_ex(char **arg_vect, char **dest)
 {
@@ -42,8 +42,8 @@ void ch_ovwrt_ex(char **arg_vect, char **dest)
 }
 /**
  * ch_ovwrt_ex_f - Executes a child process with output redirected to a file.
- * @argv: Array of strings containing the command and its arguments.
- * @dir: Array of strings containing the redirection arguments.
+ * @arg_vect: Array of strings containing the command and its arguments.
+ * @dest: Array of strings containing the redirection arguments.
  */
 void ch_ovwrt_ex_f(char **arg_vect, char **dest)
 {
