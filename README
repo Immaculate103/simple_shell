@@ -1,0 +1,16 @@
+The project consists of a UNIX simple shell project with a wide range of tasks.
+1. built_ins.c is a shell that returns the number of built-in commands
+2. exectution.c Executes a child process with the given arguments
+3. execution2.c Executes a child process with output redirected to a file with append mode
+4. execution3. Sets the previous command in the history
+5. exit.c Exits the shell by setting the running flag to 0
+6. handle_history.c Outputs a string to stdout and appends a newline character
+7. handlelines.c prints an error message with the prompt
+8. init.c initializes the shell
+9. main.c is the main function, entry point
+10. main.h is the main file
+11. parser.c Parses the input string from the user into arguments
+12. prompt.c Get the current working directory.
+13. redirection.c Checks if the argument vector contains a redirection operator
+14. ss_pipe.c Executes a pipe command
+15. ss_redirection.c Redirects input/output of commands. 
